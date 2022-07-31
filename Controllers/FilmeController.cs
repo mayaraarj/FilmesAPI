@@ -12,26 +12,38 @@ namespace FilmesAPI.Controllers
         private static int id = 1;
 
         [HttpPost]
-        public void AdicionarFilme([FromBody] Filme filme)
+        public IActionResult AdicionarFilme([FromBody] Filme filme)
         {
 
             filme.Id = id++;
             filmes.Add(filme);
 
+            // CreatedAtAction retorna a ação que criou este recurso. 
+            // nameof para indicar que vou passar o nome da action que precisou executar para recuperar o recurso, que no caso é RecuperaFilmeporID
+            // no segundo parâmetro, colocamos os valores que usamos na rota, que no caso é o id do filme que acabamos de criar.
+            // no terceiro parâmetro passamos o object em si que estamos tratando, que no caso é o filme.
+            return CreatedAtAction(nameof(RecuperaFilmeporID), new { Id = filme.Id}, filme);
 
         }
 
+
+        //O IActionResult se refere às respostas do método HTTP.
         [HttpGet]
-        public IEnumerable<Filme> RecuperarFilmes()
+        public IActionResult RecuperarFilmes()
         {
-            return filmes;
+            return Ok(filmes);
         }
 
         //Na busca, usa-se o parâmetro na url. Ex: http://localhost:5000/filmes/4. Se não passar, cai na rota do get geral.
         [HttpGet("{id}")]
-        public Filme RecuperaFilmeporID(int id)
+        public IActionResult RecuperaFilmeporID(int id)
         {
-           return filmes.FirstOrDefault(filme => filme.Id == id);
+          Filme filme = filmes.FirstOrDefault(filme => filme.Id == id);
+            if (filme != null)
+            {
+                return Ok(filme);
+            }
+            return NotFound();
         }
       
         // Essa sintaxe foi substituída nas linhas acima por uma sintaxe própria do C#
