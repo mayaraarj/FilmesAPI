@@ -54,6 +54,42 @@ namespace FilmesAPI.Controllers
             return NotFound();
         }
 
+        [HttpPut("{id}")]
+        public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeAtualizado)
+        {
+            Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            if (filme == null)
+            {
+                return NotFound();
+            }
+
+            filme.Titulo = filmeAtualizado.Titulo;
+            filme.Genero = filmeAtualizado.Genero;
+            filme.Diretor = filmeAtualizado.Diretor;
+            filme.Duracao = filmeAtualizado.Duracao;
+            _context.SaveChanges();
+
+
+            // Retorno de boas práticas do método HttpPut
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletaFilme(int id)
+        {
+            Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            if (filme == null)
+            {
+                return NotFound();
+            }
+            _context.Remove(filme);
+            _context.SaveChanges();
+
+            //O retorno do HttpDelete também deve ser o NoContent
+            return NoContent();
+
+        }
+
 
     }
 }
