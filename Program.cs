@@ -1,3 +1,6 @@
+using FilmesAPI.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace FilmesAPI
 {
     public class Program
@@ -13,7 +16,12 @@ namespace FilmesAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Adicionando a configuração de startup do banco de dados
+            builder.Services.AddDbContext<FilmeContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("FilmeConnection")));
+           
+
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
