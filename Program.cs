@@ -17,8 +17,8 @@ namespace FilmesAPI
             builder.Services.AddSwaggerGen();
 
             // Adicionando a configuração de startup do banco de dados
-            builder.Services.AddDbContext<FilmeContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("FilmeConnection")));
-           
+            builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(builder.Configuration.GetConnectionString("FilmeConnection"), new MySqlServerVersion(new Version(8, 0))));
+
 
             var app = builder.Build();
 

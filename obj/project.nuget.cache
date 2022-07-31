@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GmpA9tLiO82N9W5O1s0Iw2I7ZXMqZHxzgiCC3qiU1fyAd5p0P25SozW66n2qPTMiRuohP+rgGSkf8wZ0JwpzTw==",
+  "dgSpecHash": "BljaTljuRCJBoNAMQr9EhBRSQQM5wfgeF86u7MvzD8/iuHE/Z3ymqBFqXcZaPZYTXcAGppWM3B5cSO3sAT+zkA==",
   "success": true,
   "projectFilePath": "D:\\ALURA\\FilmesAPI\\FilmesAPI.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "C:\\Users\\Cliente\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\mysql.data\\8.0.30\\mysql.data.8.0.30.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.4\\mysql.entityframeworkcore.6.0.4.nupkg.sha512",
+    "C:\\Users\\Cliente\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\Cliente\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",

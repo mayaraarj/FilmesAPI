@@ -4,6 +4,8 @@ namespace FilmesAPI.Models
 {
     public class Filme
     {
+        [Key]
+        [Required]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo título é obrigatório")]
@@ -20,3 +22,9 @@ namespace FilmesAPI.Models
 
     }
 }
+
+// Depois de fazer as configurações de banco de dados, adicione uma Migration indo em Ferramentas - Gerenciador de pacotes
+// Nuget - Console do Gerenciador de Pacotes. No console, use o comando Add-Migration Nome do versionamento do banco de dados.
+// Ex: Add-Migration CriandoTabeladeFilmes.
+
+// Não se esqueça de fazer o comando Update-Database, pois é isso que fará que a Migration seja utilizada

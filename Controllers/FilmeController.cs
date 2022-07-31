@@ -18,7 +18,7 @@ namespace FilmesAPI.Controllers
             filme.Id = id++;
             filmes.Add(filme);
 
-            // CreatedAtAction retorna a ação que criou este recurso. 
+            // CreatedAtAction retorna a ação que criou este recurso. É uma convenção de boas prátcas usar juntamente com o verbo HttpPost para informar onde o recurso pode ser acessado.
             // nameof para indicar que vou passar o nome da action que precisou executar para recuperar o recurso, que no caso é RecuperaFilmeporID
             // no segundo parâmetro, colocamos os valores que usamos na rota, que no caso é o id do filme que acabamos de criar.
             // no terceiro parâmetro passamos o object em si que estamos tratando, que no caso é o filme.
